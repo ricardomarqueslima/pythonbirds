@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2 #atributo defoul ou atributo de classe
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
@@ -20,9 +22,17 @@ if __name__ == '__main__':
         print(filho.nome)
     ricardo.sobrenome = 'Marques'
     del ricardo.filhos
+    manuel.olhos = 1
+    del manuel.olhos
     print(ricardo.sobrenome)
     print(ricardo.__dict__)
     print(manuel.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(ricardo.olhos)
+    print(manuel.olhos)
+    print(id(Pessoa.olhos), id(ricardo.olhos), id(manuel.olhos))
+
 
 
 
